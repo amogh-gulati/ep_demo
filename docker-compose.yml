@@ -1,0 +1,48 @@
+version: '2'
+services: 
+  elk:
+    image: amogh7777/elk
+    container_name: ep
+    ports:
+      - "5601:5601"
+      - "9200:9200"
+      - "5044:5044"
+    volumes:
+      - 'elk-data:/var/lib/elasticsearch'
+      - './logstash:/etc/logstash/'
+volumes:
+  elk-data:
+
+
+# version: '2'
+# services:
+#     vahed98-gateway:
+#         image: vahed98-gateway
+#         environment:
+#             - SPRING_PROFILES_ACTIVE=prod,swagger
+#             - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+#         ports:
+#             - 80:80
+#     vahed98-smart-service:
+#         image: vahed98-smart-service
+#         environment:
+#             - SPRING_PROFILES_ACTIVE=prod,swagger
+#             - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+#         ports:
+#             - 8082:8082
+#     vahed98-mysql:
+#         image: mysql
+#         environment:
+#             MYSQL_ROOT_PASSWORD: "rootroot"
+#             MYSQL_DATABASE: "ihs"
+#         ports:
+#             - 3306:3306
+#         volumes:
+#             - db-data:/var/lib/mysql/
+#         networks:
+#             - overlay
+#         command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8 --explicit_defaults_for_timestamp
+# volumes:
+#   db-data:
+# networks:
+#   overlay:
