@@ -1,7 +1,7 @@
 version: '2'
 services: 
   elk:
-    image: amogh7777/elk
+    image: amogh7777/ep-precog
     container_name: ep
     ports:
       - "5601:5601"
